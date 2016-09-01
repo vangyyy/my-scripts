@@ -29,7 +29,7 @@ sudo add-apt-repository ppa:webupd8team/atom -y
 sudo add-apt-repository ppa:nilarimogard/webupd8 -y
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
 sudo apt-get update
-sudo apt-get install atom indicator-netspeed ubuntu-make unity-tweak-tool gnome-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge shutter inkscape calibre htop xclip exfat-utils exfat-fuse -y
+sudo apt-get install atom indicator-netspeed ubuntu-make unity-tweak-tool gnome-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge shutter inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw -y
 
 # Android Studio via umake (Android Studio -> Tools -> Create desktop Entry)
 umake android

@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# My custom icons
+# Geddit dark background && tab width && plugins && line numbers && highlighting
+# Slovak language && Text entry -> alt+Lshift
+# https://nastavenia.tuke.sk/posta/thunderbird-nastavenie
+# Appearence/Behavior/Show the menus for a window/In the window's title bar
+# http://askubuntu.com/questions/31786/chrome-asks-for-password-to-unlock-keyring-on-startup
+# http://askubuntu.com/questions/761180/wifi-doesnt-work-after-suspend-after-16-04-upgrade
+# http://askubuntu.com/questions/142128/open-windows-in-center-of-screen
+# Mozilla setup
+# GIMP Single window mode
+# Atom setup
+
+
+
+# Grub
+sudo apt-get remove memtest86+
+sudo update-grub
+
+# Themes
+sudo add-apt-repository ppa:docky-core/stable -y
+sudo add-apt-repository ppa:noobslab/macbuntu -y
+sudo apt-get update
+sudo apt-get install docky macbuntu-os-ithemes-lts-v7 -y
+
+# My Applications (alacarte == Main Menu)
+sudo add-apt-repository ppa:webupd8team/atom -y
+sudo add-apt-repository ppa:nilarimogard/webupd8 -y
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make -y
+sudo apt-get update
+sudo apt-get install atom indicator-netspeed ubuntu-make unity-tweak-tool gnome-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge shutter inkscape calibre htop xclip exfat-utils exfat-fuse -y
+
+# Android Studio via umake (Android Studio -> Tools -> Create desktop Entry)
+umake android
+
+a
+
+# Spotify
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list -y
+sudo apt-get update
+sudo apt-get install spotify-client -y
+
+# School
+sudo apt-get install gcc make valgrind gdb cgdb gedit git libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox -y
+
+# Remove bloat (hide browser & amazon icon & system log, rename G-keep)
+sudo apt-get remove --purge webbrowser-app aisleriot gnome-mahjongg imagemagick totem checkbox-gui gnome-font-viewer gnome-mines gnome-sudoku onboard xdiagnose example-content transmission-common transmission-gtk brltty whoopsie gnome-calendar -y
+sudo apt-get autoremove -y && sudo apt-get clean all -y && sudo apt-get autoclean all -y
+
+
+

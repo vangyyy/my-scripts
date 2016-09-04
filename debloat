@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Remove bloat
-sudo apt-get remove --purge -y aisleriot gnome-mahjongg imagemagick totem checkbox-gui gnome-font-viewer gnome-mines gnome-sudoku onboard example-content transmission-common transmission-gtk brltty gnome-calendar
-
-sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoclean all

@@ -11,3 +11,4 @@ sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoc
 sudo rm -rf /usr/share/applications/webbrowser-app.desktop
 sudo rm -rf /usr/share/applications/ubuntu-amazon-default.desktop
 sudo rm -rf /usr/share/applications/gnome-system-log.desktop
+sudo rm -rf /usr/share/applications/git-dag.desktop

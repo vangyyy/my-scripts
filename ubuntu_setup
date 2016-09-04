@@ -47,6 +47,11 @@ sudo apt-get install -y spotify-client
 # School
 sudo apt-get install -y gcc make valgrind gdb cgdb gedit git libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox
 
-# Remove bloat (hide browser & amazon icon & system log, rename G-keep)
-sudo apt-get remove --purge -y webbrowser-app aisleriot gnome-mahjongg imagemagick totem checkbox-gui gnome-font-viewer gnome-mines gnome-sudoku onboard xdiagnose example-content transmission-common transmission-gtk brltty whoopsie gnome-calendar
-sudo apt-get autoremove -y && sudo apt-get clean -y all && sudo apt-get autoclean -y all
+# Remove bloat
+sudo apt-get remove --purge -y aisleriot gnome-mahjongg imagemagick totem checkbox-gui gnome-font-viewer gnome-mines gnome-sudoku onboard example-content transmission-common transmission-gtk brltty gnome-calendar
+
+sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoclean all
+
+sudo rm -rf /usr/share/applications/webbrowser-app.desktop
+sudo rm -rf /usr/share/applications/ubuntu-amazon-default.desktop
+sudo rm -rf /usr/share/applications/gnome-system-log.desktop

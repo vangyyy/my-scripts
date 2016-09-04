@@ -1,4 +1,6 @@
 #!/bin/bash
 
-sudo apt-get remove --purge webbrowser-app aisleriot gnome-mahjongg totem checkbox-gui gnome-font-viewer gnome-mines gnome-sudoku onboard xdiagnose example-content transmission-common transmission-gtk brltty whoopsie gnome-calendar -y
-sudo apt-get autoremove -y && sudo apt-get clean all -y && sudo apt-get autoclean all -y
+# Remove bloat
+sudo apt-get remove --purge -y aisleriot gnome-mahjongg imagemagick totem checkbox-gui gnome-font-viewer gnome-mines gnome-sudoku onboard example-content transmission-common transmission-gtk brltty gnome-calendar
+
+sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoclean all

@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # My custom icons
-# Geddit dark background && tab width && plugins && line numbers && highlighting
-# Slovak language && Text entry -> alt+Lshift
 # https://nastavenia.tuke.sk/posta/thunderbird-nastavenie
 # Appearence/Behavior/Show the menus for a window/In the window's title bar
+# Appearence/Behavior/Menu visibility/Always displayed
 # http://askubuntu.com/questions/31786/chrome-asks-for-password-to-unlock-keyring-on-startup
 # http://askubuntu.com/questions/761180/wifi-doesnt-work-after-suspend-after-16-04-upgrade
 # http://askubuntu.com/questions/142128/open-windows-in-center-of-screen
@@ -45,7 +44,32 @@ sudo apt-get -y update
 sudo apt-get -y install spotify-client
 
 # School
-sudo apt-get -y install gcc make valgrind gdb cgdb gedit git libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit
+sudo apt-get -y install gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit
+
+# Update system settings
+gsettings set com.canonical.indicator.power show-percentage true
+gsettings set com.canonical.indicator.datetime show-seconds true
+gsettings set com.canonical.indicator.datetime time-format "24-hour"
+gsettings set com.ubuntu.sound allow-amplified-volume true
+gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
+gsettings set org.gnome.desktop.interface cursor-theme "DMZ-black"
+gsettings set org.gnome.desktop.interface gtk-theme "MacBuntu-OS-Unity-Classic"
+gsettings set org.gnome.desktop.interface icon-theme "My-Custom"
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'sk+qwerty')]"
+gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']"
+gsettings set org.gnome.desktop.wm.preferences auto-raise true
+gsettings set org.gnome.desktop.wm.preferences theme "MacBuntu-OS-Unity-Classic"
+gsettings set org.gnome.gedit.plugins active-plugins "['spell', 'quickopen', 'modelines', 'wordcompletion', 'bracketcompletion', 'git', 'codecomment', 'filebrowser', 'snippets', 'docinfo', 'externaltools', 'terminal', 'smartspaces', 'time']"
+gsettings set org.gnome.gedit.preferences.editor bracket-machting true
+gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
+gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
+gsettings set org.gnome.gedit.preferences.editor scheme "cobalt"
+gsettings set org.gnome.gedit.preferences.editor tabs-size 4
+gsettings set org.gnome.SessionManager auto-save-session true
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity 0.74169743061065674
+gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://synaptic.desktop', 'application://org.gnome.Software.desktop', 'application://virtualbox.desktop', 'application://libreoffice-writer.desktop', 'application://libreoffice-calc.desktop', 'application://libreoffice-impress.desktop', 'application://deluge.desktop', 'application://chromium-browser.desktop', 'application://chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://cheese.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']"
+dconf write /org/gnome/mutter/center-new-windows true
 
 # Remove bloat
 sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard

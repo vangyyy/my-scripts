@@ -4,7 +4,6 @@
 # https://nastavenia.tuke.sk/posta/thunderbird-nastavenie
 # Appearence/Behavior/Show the menus for a window/In the window's title bar
 # Appearence/Behavior/Menu visibility/Always displayed
-# http://askubuntu.com/questions/31786/chrome-asks-for-password-to-unlock-keyring-on-startup
 # http://askubuntu.com/questions/761180/wifi-doesnt-work-after-suspend-after-16-04-upgrade
 # http://askubuntu.com/questions/142128/open-windows-in-center-of-screen
 # Mozilla setup
@@ -66,10 +65,14 @@ gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor scheme "cobalt"
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
+gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
 gsettings set org.gnome.SessionManager auto-save-session true
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity 0.74169743061065674
 gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://synaptic.desktop', 'application://org.gnome.Software.desktop', 'application://virtualbox.desktop', 'application://libreoffice-writer.desktop', 'application://libreoffice-calc.desktop', 'application://libreoffice-impress.desktop', 'application://deluge.desktop', 'application://chromium-browser.desktop', 'application://chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://cheese.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']"
 dconf write /org/gnome/mutter/center-new-windows true
+
+# Requires clicks
+sudo apt-get install -y ubuntu-restricted-extras
 
 # Remove bloat
 sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard

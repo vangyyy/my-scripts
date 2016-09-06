@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Git setup
 # My custom icons
 # https://nastavenia.tuke.sk/posta/thunderbird-nastavenie
 # Appearence/Behavior/Show the menus for a window/In the window's title bar
@@ -9,6 +10,7 @@
 # Mozilla setup
 # GIMP Single window mode
 # Atom setup
+# Android Studio (Android Studio -> Tools -> Create desktop Entry) ???
 
 # Update and Upgrade
 sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y autoremove
@@ -17,24 +19,12 @@ sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y autoremove
 sudo apt-get -y remove memtest86+
 sudo update-grub
 
-# Themes
-sudo add-apt-repository -y ppa:docky-core/stable
-sudo add-apt-repository -y ppa:noobslab/macbuntu
-sudo apt-get -y update
-sudo apt-get install -y docky macbuntu-os-ithemes-lts-v7
-
 # My Applications
 sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:nilarimogard/webupd8
-sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
 sudo add-apt-repository -y ppa:eugenesan/ppa #smartgit
 sudo apt-get -y update
-sudo apt-get -y install synaptic arduino fritzing virtualbox atom indicator-netspeed ubuntu-make unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge shutter inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit gitcola
-
-# Android Studio via umake (Android Studio -> Tools -> Create desktop Entry)
-umake android
-
-a
+sudo apt-get -y install install gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit gitcola
 
 # Spotify
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
@@ -42,8 +32,11 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get -y update
 sudo apt-get -y install spotify-client
 
-# School
-sudo apt-get -y install gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit
+# Themes
+sudo add-apt-repository -y ppa:docky-core/stable
+sudo add-apt-repository -y ppa:noobslab/macbuntu
+sudo apt-get -y update
+sudo apt-get install -y docky macbuntu-os-ithemes-lts-v7
 
 # Update system settings
 gsettings set com.canonical.indicator.power show-percentage true

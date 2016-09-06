@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rename 's/\.svg$/\.png/' *.svg

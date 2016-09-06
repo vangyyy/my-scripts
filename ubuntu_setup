@@ -21,7 +21,8 @@ sudo update-grub
 
 # My Applications
 sudo add-apt-repository -y ppa:webupd8team/atom
-sudo add-apt-repository -y ppa:nilarimogard/webupd8
+sudo add-apt-repository -y ppa:webupd8team/java
+sudo add-apt-repository -y ppa:nilarimogard/webupd8 #dropbox
 sudo add-apt-repository -y ppa:eugenesan/ppa #smartgit
 sudo apt-get -y update
 sudo apt-get -y install install gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit gitcola
@@ -42,13 +43,24 @@ sudo apt-get install -y docky macbuntu-os-ithemes-lts-v7
 gsettings set com.canonical.indicator.power show-percentage true
 gsettings set com.canonical.indicator.datetime show-seconds true
 gsettings set com.canonical.indicator.datetime time-format "24-hour"
-gsettings set com.ubuntu.sound allow-amplified-volume true
+gsettings set com.canonical.indicator.datetime timezone-name "Europe/Bratislava Bratislava"
+gsettings set com.canonical.indicator.messages applications "['thunderbird.desktop']"
+gsettings set com.canonical.indicator.sound interested-media-players "['spotify.desktop', 'rhythmbox.desktop']"
+gsettings set com.canonical.indicator.sound preferred-media-players "['rhythmbox.desktop']"
+gsettings set com.canonical.Unity always-show-menus true
+gsettings set com.canonical.Unity.ApplicationsLens display-available-apps false
+gsettings set com.canonical.Unity.FilesLens use-locate false
+gsettings set com.canonical.Unity integrated-menus true
 gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
+gsettings set com.canonical.Unity.Lenses home-lens-default-view ['music.scope', 'music-rhythmbox.scope', 'applications.scope', 'applications-applications.scope', 'applications-scopes.scope']
+gsettings set com.canonical.Unity.Runner history ['gksu service network-manager restart', 'unity', 'gksu systemctl restart network-manager.service', 'gksu nautilus']
+gsettings set com.ubuntu.sound allow-amplified-volume true
 gsettings set org.gnome.desktop.interface cursor-theme "DMZ-black"
 gsettings set org.gnome.desktop.interface gtk-theme "MacBuntu-OS-Unity-Classic"
 gsettings set org.gnome.desktop.interface icon-theme "My-Custom"
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'sk+qwerty')]"
+gsettings set org.gnome.desktop.screensaver lock-delay 180
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']"
 gsettings set org.gnome.desktop.wm.preferences auto-raise true
 gsettings set org.gnome.desktop.wm.preferences theme "MacBuntu-OS-Unity-Classic"
@@ -60,6 +72,8 @@ gsettings set org.gnome.gedit.preferences.editor scheme "cobalt"
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
 gsettings set org.gnome.SessionManager auto-save-session true
+gsettings set org.gnome.nautilus.window-state sidebar-width 180
+gsettings set org.gnome.metacity show-maximized-titlebars true
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity 0.74169743061065674
 gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://synaptic.desktop', 'application://org.gnome.Software.desktop', 'application://virtualbox.desktop', 'application://libreoffice-writer.desktop', 'application://libreoffice-calc.desktop', 'application://libreoffice-impress.desktop', 'application://deluge.desktop', 'application://chromium-browser.desktop', 'application://chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://cheese.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']"
 dconf write /org/gnome/mutter/center-new-windows true
@@ -69,9 +83,9 @@ sudo apt-get install -y ubuntu-restricted-extras
 
 # Remove bloat
 sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard
-
 sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoclean all
 
+# Remove useless icons
 sudo rm -rf /usr/share/applications/webbrowser-app.desktop
 sudo rm -rf /usr/share/applications/ubuntu-amazon-default.desktop
 sudo rm -rf /usr/share/applications/gnome-system-log.desktop

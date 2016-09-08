@@ -1,10 +1,16 @@
 #!/bin/bash
 
 # What to backup
-backup_files="/home/$USER/.ssh /home/$USER/.gimp-2.8 /home/$USER/.thunderbird /home/$USER/.mozilla"
+backup_files="/home/$USER/.ssh /home/$USER/.gimp-2.8 /home/$USER/.thunderbird /home/$USER/.mozilla /home/$USER/.atom /home/$USER/.bashrc /home/$USER/.gitconfig /home/$USER/.smartgit /home/$USER/.shutter /home/$USER/.gconf /home/$USER/.gnome /home/$USER/.gnome2 /home/$USER/.compiz /home/$USER/.local /home/$USER/.config /home/$USER/Pictures /home/$USER/Calibre_library"
 
 # Where to backup to
-dest="/home/$USER/backup"
+dest="/home/$USER/Backups"
+
+if [ ! -d "$dest" ]; then
+  echo "Location does not exists"
+  echo "Creating location ..."
+  mkdir -pv $dest
+fi
 
 # Create archive filename
 TIME_STAMP=$(date +%Y%m%d)
@@ -20,12 +26,17 @@ echo "Created: $(date)
 Contains: $backup_files" > README.txt
 
 # Backup the files using tar
-#tar czf -P --absolute-names $dest/$archive_file $backup_files README.txt
-tar -cj --exclude=filename -P --absolute-name $backup_files | pipebench > $dest/$archive_file
+if hash pipebench 2>/dev/null; then
+  # If pipebench is installed
+  tar -cj -P --absolute-names $backup_files README.txt | pipebench > $dest/$archive_file
+else
+  # If pipebench is missing
+  tar czf $dest/$archive_file -P --absolute-names $backup_files README.txt
+fi
 
 # Remove README file
 rm README.txt
 
 # Print end status message
-echo "Backup finished"
+echo "Backup finished !"
 date

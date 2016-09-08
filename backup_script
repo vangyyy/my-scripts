@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# What to backup
+backup_files="/home/$USER/.ssh /home/$USER/.gimp-2.8 /home/$USER/.thunderbird /home/$USER/.mozilla"
+
+# Where to backup to
+dest="/home/$USER/backup"
+
+# Create archive filename
+TIME_STAMP=$(date +%Y%m%d)
+archive_file="$USER@$HOSTNAME-$TIME_STAMP.tgz"
+
+# Print start status message
+echo "Backing up to $dest/$archive_file"
+date
+echo "Backing up ..."
+
+# Create README file
+echo "Created: $(date)
+Contains: $backup_files" > README.txt
+
+# Backup the files using tar
+#tar czf -P --absolute-names $dest/$archive_file $backup_files README.txt
+tar -cj --exclude=filename -P --absolute-name $backup_files | pipebench > $dest/$archive_file
+
+# Remove README file
+rm README.txt
+
+# Print end status message
+echo "Backup finished"
+date

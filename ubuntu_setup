@@ -1,14 +1,9 @@
 #!/bin/bash
 
 # Git setup
-# My custom icons
-# https://nastavenia.tuke.sk/posta/thunderbird-nastavenie
-# Appearence/Behavior/Show the menus for a window/In the window's title bar
-# Appearence/Behavior/Menu visibility/Always displayed
+# My-Custom trash icon
 # http://askubuntu.com/questions/761180/wifi-doesnt-work-after-suspend-after-16-04-upgrade
 # http://askubuntu.com/questions/142128/open-windows-in-center-of-screen
-# Mozilla setup
-# GIMP Single window mode
 # Atom setup
 # Android Studio (Android Studio -> Tools -> Create desktop Entry) ???
 
@@ -25,7 +20,7 @@ sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:nilarimogard/webupd8 #dropbox
 sudo add-apt-repository -y ppa:eugenesan/ppa #smartgit
 sudo apt-get -y update
-sudo apt-get -y install install gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit gitcola
+sudo apt-get -y install gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit git-cola
 
 # Spotify
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
@@ -52,18 +47,14 @@ gsettings set com.canonical.Unity.ApplicationsLens display-available-apps false
 gsettings set com.canonical.Unity.FilesLens use-locate false
 gsettings set com.canonical.Unity integrated-menus true
 gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
-gsettings set com.canonical.Unity.Lenses home-lens-default-view ['music.scope', 'music-rhythmbox.scope', 'applications.scope', 'applications-applications.scope', 'applications-scopes.scope']
-gsettings set com.canonical.Unity.Runner history ['gksu service network-manager restart', 'unity', 'gksu systemctl restart network-manager.service', 'gksu nautilus']
 gsettings set com.ubuntu.sound allow-amplified-volume true
-gsettings set org.gnome.desktop.interface cursor-theme "DMZ-black"
-gsettings set org.gnome.desktop.interface gtk-theme "MacBuntu-OS-Unity-Classic"
-gsettings set org.gnome.desktop.interface icon-theme "My-Custom"
+gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-Black'
+gsettings set org.gnome.desktop.interface gtk-theme 'MacBuntu-OS-Unity-Classic'
+gsettings set org.gnome.desktop.interface icon-theme 'My-Custom'
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'sk+qwerty')]"
-gsettings set org.gnome.desktop.screensaver lock-delay 180
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']"
 gsettings set org.gnome.desktop.wm.preferences auto-raise true
-gsettings set org.gnome.desktop.wm.preferences theme "MacBuntu-OS-Unity-Classic"
 gsettings set org.gnome.gedit.plugins active-plugins "['spell', 'quickopen', 'modelines', 'wordcompletion', 'bracketcompletion', 'git', 'codecomment', 'filebrowser', 'snippets', 'docinfo', 'externaltools', 'terminal', 'smartspaces', 'time']"
 gsettings set org.gnome.gedit.preferences.editor bracket-machting true
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
@@ -71,12 +62,21 @@ gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor scheme "cobalt"
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
-gsettings set org.gnome.SessionManager auto-save-session true
 gsettings set org.gnome.nautilus.window-state sidebar-width 180
 gsettings set org.gnome.metacity show-maximized-titlebars true
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity 0.74169743061065674
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ icon-size 40
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ background-color '#555753ff'
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
 gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://synaptic.desktop', 'application://org.gnome.Software.desktop', 'application://virtualbox.desktop', 'application://libreoffice-writer.desktop', 'application://libreoffice-calc.desktop', 'application://libreoffice-impress.desktop', 'application://deluge.desktop', 'application://chromium-browser.desktop', 'application://chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://cheese.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']"
+dconf write /org/compiz/profiles/unity/plugins/unityshell/alt-tab-bias-viewport false
 dconf write /org/gnome/mutter/center-new-windows true
+dconf write /org/compiz/profiles/unity/plugins/grid/bottom-left-corner-action 1
+dconf write /org/compiz/profiles/unity/plugins/grid/bottom-right-corner-action 3
+dconf write /org/compiz/profiles/unity/plugins/grid/top-left-corner-action 7
+dconf write /org/compiz/profiles/unity/plugins/grid/top-right-corner-action 9
 
 # Requires clicks
 sudo apt-get install -y ubuntu-restricted-extras

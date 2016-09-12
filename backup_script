@@ -7,9 +7,9 @@ backup_files="/home/$USER/.ssh /home/$USER/.gimp-2.8 /home/$USER/.thunderbird /h
 dest="/home/$USER/Backups"
 
 if [ ! -d "$dest" ]; then
-  echo "Location does not exists"
-  echo "Creating location ..."
-  mkdir -pv $dest
+	echo "Location does not exists"
+	echo "Creating location ..."
+	mkdir -pv $dest
 fi
 
 # Create archive filename

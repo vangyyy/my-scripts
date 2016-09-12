@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Git setup
 # http://askubuntu.com/questions/761180/wifi-doesnt-work-after-suspend-after-16-04-upgrade
 # http://askubuntu.com/questions/142128/open-windows-in-center-of-screen
 # Atom setup

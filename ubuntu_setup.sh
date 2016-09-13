@@ -2,37 +2,27 @@
 
 # http://askubuntu.com/questions/761180/wifi-doesnt-work-after-suspend-after-16-04-upgrade
 # http://askubuntu.com/questions/142128/open-windows-in-center-of-screen
-# Atom setup
 # Android Studio (Android Studio -> Tools -> Create desktop Entry) ???
 
 # Update and Upgrade
-sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y autoremove
+sudo apt-get -y update && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
 
 # Grub
 sudo apt-get -y remove memtest86+
 sudo update-grub
 
-# My Applications
+# Install Applications
 sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:nilarimogard/webupd8 #dropbox
 sudo add-apt-repository -y ppa:eugenesan/ppa #smartgit
-sudo apt-get -y update
-sudo apt-get -y install gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc ubuntu-mate-welcome compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit git-cola
-
-# Spotify
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get -y update
-sudo apt-get -y install spotify-client
-
-# Themes
 sudo add-apt-repository -y ppa:docky-core/stable
 sudo add-apt-repository -y ppa:noobslab/macbuntu
+sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886
 sudo apt-get -y update
-sudo apt-get install -y docky macbuntu-os-ithemes-lts-v7
+sudo apt-get -y install docky macbuntu-os-ithemes-lts-v7 gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit git-cola spotify-client ubuntu-restricted-extras
 
-# Update system settings
+# Config system settings
 gsettings set com.ubuntu.sound allow-amplified-volume true
 gsettings set com.canonical.indicator.power show-percentage true
 gsettings set com.canonical.indicator.datetime show-seconds true
@@ -76,11 +66,8 @@ dconf write /org/compiz/profiles/unity/plugins/grid/bottom-right-corner-action 3
 dconf write /org/compiz/profiles/unity/plugins/grid/top-left-corner-action 7
 dconf write /org/compiz/profiles/unity/plugins/grid/top-right-corner-action 9
 
-# Requires clicks
-sudo apt-get install -y ubuntu-restricted-extras
-
 # Remove bloat
-sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard
+sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard xdiagnose
 sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoclean all
 
 # Remove useless icons

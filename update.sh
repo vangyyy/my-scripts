@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Update
-sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y autoremove
+sudo apt-get -y update && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
 
 # Remove bloat
-sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard
+sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard xdiagnose
 sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoclean all
 
 # Remove useless icons

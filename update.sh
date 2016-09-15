@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Update
-sudo apt-get -y update && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
+sudo apt-get -y update
+sudo apt-get -y dist-upgrade
 
 # Remove bloat
 sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard xdiagnose

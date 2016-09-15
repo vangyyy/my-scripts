@@ -5,7 +5,11 @@
 # Android Studio (Android Studio -> Tools -> Create desktop Entry) ???
 
 # Update and Upgrade
-sudo apt-get -y update && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
+sudo apt-get -y update
+sudo apt-get -y dist-upgrade
+
+# Virtualbox
+sudo adduser $USER vboxusers
 
 # Grub
 sudo apt-get -y remove memtest86+
@@ -53,6 +57,7 @@ gsettings set org.gnome.gedit.plugins active-plugins "['spell', 'quickopen', 'mo
 gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
 gsettings set org.gnome.nautilus.window-state sidebar-width 180
 gsettings set org.gnome.metacity show-maximized-titlebars true
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 1
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity 0.74169743061065674
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ icon-size 40
@@ -70,7 +75,10 @@ dconf write /org/compiz/profiles/unity/plugins/grid/top-right-corner-action 9
 sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar gnome-font-viewer checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard xdiagnose
 sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoclean all
 
-# Remove useless icons
+# Remove useless icons and folders
+sudo rm -rf ~/examples.desktop
+sudo rm -rf ~/Templates
+sudo rm -rf ~/Public
 sudo rm -rf /usr/share/applications/webbrowser-app.desktop
 sudo rm -rf /usr/share/applications/ubuntu-amazon-default.desktop
 sudo rm -rf /usr/share/applications/gnome-system-log.desktop

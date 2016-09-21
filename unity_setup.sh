@@ -21,12 +21,12 @@ sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:nilarimogard/webupd8 #dropbox
 sudo add-apt-repository -y ppa:eugenesan/ppa #smartgit
-sudo add-apt-repository ppa:mmk2410/intellij-idea-community
+sudo add-apt-repository -y ppa:mmk2410/intellij-idea-community
 sudo add-apt-repository -y ppa:docky-core/stable
 sudo add-apt-repository -y ppa:noobslab/macbuntu
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886
 sudo apt-get -y update
-sudo apt-get -y install docky macbuntu-os-ithemes-lts-v7 gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit git-cola intellij-idea-community spotify-client ubuntu-restricted-extras
+sudo apt-get -y install docky macbuntu-os-ithemes-lts-v7 gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit git-cola oracle-java8-installer intellij-idea-community spotify-client ubuntu-restricted-extras
 
 # Config system settings
 gsettings set com.ubuntu.sound allow-amplified-volume true

@@ -2,8 +2,7 @@
 
 # http://askubuntu.com/questions/761180/wifi-doesnt-work-after-suspend-after-16-04-upgrade
 # http://askubuntu.com/questions/142128/open-windows-in-center-of-screen
-# Android Studio (Android Studio -> Tools -> Create desktop Entry) ???
-# IntelliJ setup
+# Android Studio
 
 # Update and Upgrade
 sudo apt-get -y update

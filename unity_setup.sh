@@ -25,7 +25,7 @@ sudo add-apt-repository -y ppa:docky-core/stable
 sudo add-apt-repository -y ppa:noobslab/macbuntu
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886
 sudo apt-get -y update
-sudo apt-get -y install docky macbuntu-os-ithemes-lts-v7 gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit git-cola oracle-java8-installer intellij-idea-community spotify-client ubuntu-restricted-extras
+sudo apt-get -y install docky macbuntu-os-ithemes-lts-v7 gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit git-cola oracle-java8-installer intellij-idea-community spotify-client fastboot adb ubuntu-restricted-extras
 
 # Config system settings
 gsettings set com.ubuntu.sound allow-amplified-volume true
@@ -73,7 +73,7 @@ dconf write /org/compiz/profiles/unity/plugins/grid/top-left-corner-action 7
 dconf write /org/compiz/profiles/unity/plugins/grid/top-right-corner-action 9
 
 # Remove bloat
-sudo apt-get -y remove --purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard xdiagnose webbrowser-app apport
+sudo apt-get -y remove aisleriot gnome-mahjongg gnome-mines gnome-sudoku gnome-calendar checkbox-gui imagemagick totem example-content transmission-common transmission-gtk brltty onboard xdiagnose webbrowser-app apport
 sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoclean all
 
 # Remove useless icons and folders

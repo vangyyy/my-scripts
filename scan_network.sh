@@ -20,10 +20,10 @@ if egrep -i "00:1d:43:30:1e:03" <<< "$network" ; then
 	echo 'Raspberry Pi 2 (Chinese adapter)' >> connected.txt
 fi
 if egrep -i "C0:BD:D1:A9:D4:34" <<< "$network" ; then
-	echo '??? Samsung Galaxy Note 4' >> connected.txt
+	echo 'Samsung Galaxy Note 4' >> connected.txt
 fi
 if egrep -i "C8:FF:28:FA:67:CD" <<< "$network" ; then
-	echo '??? Acer Aspire F15' >> connected.txt
+	echo 'Acer Aspire F15' >> connected.txt
 fi
 if egrep -i "b0:d0:9c:37:82:ff" <<< "$network" ; then
 	echo 'Samsung Galaxy Tab 10.1' >> connected.txt

@@ -5,32 +5,7 @@
 # gksu systemctl restart network-manager.service
 # Android Studio, packettracer, sqldatabase
 
-# Copy files
-while true; do
-	read -p "Do you want to copy icon packs ? [Y/n] " answer
-	if [[ ($answer = "y") || ($answer = "Y") ]]; then
-		if [ -d "My-Custom" ]; then
-			sudo cp -a ./My-Custom /usr/share/icons
-			echo "My-Custom copied."
-			break
-		else
-			echo "My-Custom does not exist. Aborting ..."
-			exit 1
-		fi
-
-		if [ -d "My-Custom-Dark" ]; then
-			sudo cp -a ./My-Custom-Dark /usr/share/icons
-			echo "My-Custom-Dark copied."
-			break
-		else
-			echo "My-Custom-Dark does not exist. Aborting ..."
-			exit 1
-		fi
-	elif [[ ($answer = "n") || ($answer = "N") ]]; then
-		break
-	fi
-done
-
+# Copy wallpapers
 while true; do
 	read -p "Do you want to copy wallpapers ? [Y/n] " answer
 	if [[ ($answer = "y") || ($answer = "Y") ]]; then
@@ -73,6 +48,17 @@ sudo add-apt-repository -y ppa:gerardpuig/ppa #ubuntu-cleaner
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886
 sudo apt-get -y update
 sudo apt-get -y install docky macbuntu-os-ithemes-lts-v7 flatabulous-theme gcc make valgrind gdb cgdb gedit git gedit-plugins libncurses5-dev libncurses5 cppcheck ncurses-doc vim nano mcedit synaptic arduino fritzing virtualbox atom indicator-netspeed unity-tweak-tool chromium-browser nautilus-dropbox alacarte shutter gimp vlc compizconfig-settings-manager deluge inkscape calibre htop xclip exfat-utils exfat-fuse tlp tlp-rdw gparted smartgit git-cola oracle-java8-installer intellij-idea-community codeblocks spotify-client fastboot adb ubuntu-restricted-extras software-properties-common kodi pepperflashplugin-nonfree freshplayerplugin ubuntu-cleaner rhythmbox-plugin-alternative-toolbar touchegg
+
+# Clone icon packs
+while true; do
+	read -p "Do you want to clone icon packs ? [Y/n] " answer
+	if [[ ($answer = "y") || ($answer = "Y") ]]; then
+		sudo git clone https://github.com/vangyyy/My-Custom.git /usr/share/icons/My-Custom
+		sudo git clone https://github.com/vangyyy/My-Custom-Dark.git /usr/share/icons/My-Custom-Dark
+	elif [[ ($answer = "n") || ($answer = "N") ]]; then
+		break
+	fi
+done
 
 # Config system settings
 gsettings set com.ubuntu.sound allow-amplified-volume true

@@ -66,7 +66,7 @@ gsettings set com.canonical.Unity.ApplicationsLens display-available-apps false
 gsettings set com.canonical.Unity.FilesLens use-locate false
 gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
 gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://synaptic.desktop', 'application://org.gnome.Software.desktop', 'application://virtualbox.desktop', 'application://libreoffice-writer.desktop', 'application://libreoffice-calc.desktop', 'application://libreoffice-impress.desktop', 'application://deluge.desktop', 'application://chromium-browser.desktop', 'application://chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://cheese.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']"
-gsettings set org.gnome.gedit.preferences.editor bracket-machting true
+gsettings set org.gnome.gedit.preferences.editor bracket-matching true
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4

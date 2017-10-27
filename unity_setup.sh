@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# http://askubuntu.com/questions/761180/wifi-doesnt-work-after-suspend-after-16-04-upgrade
-# gksu service network-manager restart
-# gksu systemctl restart network-manager.service
-# Android Studio, packettracer, sqldatabase
-
 # Add repositories
 sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:webupd8team/java
@@ -66,7 +61,7 @@ gsettings set com.canonical.Unity.ApplicationsLens display-available-apps false
 gsettings set com.canonical.Unity.FilesLens use-locate false
 gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
 gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://synaptic.desktop', 'application://org.gnome.Software.desktop', 'application://virtualbox.desktop', 'application://libreoffice-writer.desktop', 'application://libreoffice-calc.desktop', 'application://libreoffice-impress.desktop', 'application://deluge.desktop', 'application://chromium-browser.desktop', 'application://chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://cheese.desktop', 'unity://desktop-icon', 'unity://expo-icon', 'unity://devices']"
-gsettings set org.gnome.gedit.preferences.editor bracket-matching true
+gsettings set org.gnome.gedit.preferences.editor bracket-machting true
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
@@ -126,18 +121,3 @@ sudo apt-get -y autoremove && sudo apt-get -y clean all && sudo apt-get -y autoc
 # Remove useless icons and folders
 sudo rm -rf ~/examples.desktop ~/Templates ~/Public /usr/share/applications/webbrowser-app.desktop /usr/share/applications/ubuntu-amazon-default.desktop /usr/share/applications/gnome-system-log.desktop /usr/share/applications/git-dag.desktop /usr/share/applications/display-im6.desktop /usr/share/applications/display-im6.q16.desktop
 
-# Touchegg and palm detection config
-# cat > ~/.xprofile << EOF
-# Touchegg setup
-# synclient TapButton2=0
-# synclient ClickFinger2=0
-# synclient TapButton3=0
-# synclient ClickFinger3=0
-# synclient HorizTwoFingerScroll=0
-# synclient VertTwoFingerScroll=0
-# touchegg &
-
-# Palm detection setup
-# xinput set-prop 13 "Synaptics Palm Detection" 1
-# xinput set-prop "13" "Synaptics Palm Dimensions" 5, 5
-# EOF

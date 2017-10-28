@@ -57,6 +57,8 @@ gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer true
 gsettings set org.gnome.settings-daemon.peripherals.touchscreen orientation-lock true
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
 gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 5500
 gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
 gsettings set org.gnome.nautilus.desktop volumes-visible true
 gsettings set org.gnome.gedit.preferences.editor use-default-font false

@@ -112,7 +112,7 @@ EOF
 
 # Trackpoint sensitivity
 sudo bash -c 'cat << EOF > /etc/udev/rules.d/10-trackpoint.rules
-ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/speed}="240"
+ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/speed}="255"
 EOF'
 
 # Disable input sources

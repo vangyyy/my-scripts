@@ -108,15 +108,9 @@ gtk-application-prefer-dark-theme=1
 EOF
 
 # Trackpoint sensitivity
-sudo bash -c 'cat << EOF > /etc/rc.local
-#!/bin/sh -e
-
-echo -n 250 > /sys/devices/platform/i8042/serio1/serio2/sensitivity
-echo -n 250 > /sys/devices/platform/i8042/serio1/serio2/speed
-
-exit 0
+sudo bash -c 'cat << EOF > /etc/udev/rules.d/10-trackpoint.rules
+ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/speed}="240"
 EOF'
-sudo chmod 755 /etc/rc.local
 
 # Disable input sources
 echo 'while read id; do xinput disable $id; done <<< $(xinput | grep 'Wacom' | cut -d"=" -f2 | cut -f1)' >> ~/.profile

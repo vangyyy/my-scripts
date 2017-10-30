@@ -19,7 +19,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # Install applications
-sudo apt-get -y install git chromium-browser gedit gedit-plugins atom vim gksu nautilus-dropbox thunderbird docky gimp calibre vlc deluge rhythmbox-plugin-alternative-toolbar spotify-client gparted exfat-utils exfat-fuse samba virtualbox synaptic ubuntu-cleaner oracle-java8-installer intellij-idea-ultimate android-studio adb pepperflashplugin-nonfree tlp tlp-rdw smartmontools ethtool tp-smapi-dkms acpitool texlive texlive-bibtex-extra biber
+sudo apt-get -y install git chromium-browser gedit gedit-plugins atom vim gksu nautilus-dropbox thunderbird docky gimp calibre vlc deluge rhythmbox-plugin-alternative-toolbar spotify-client gparted exfat-utils exfat-fuse samba virtualbox synaptic ubuntu-cleaner oracle-java8-installer intellij-idea-ultimate android-studio adb pepperflashplugin-nonfree tlp tlp-rdw smartmontools ethtool tp-smapi-dkms acpitool texlive texlive-bibtex-extra biber texlive-lang-czechslovak
 
 # Clone icon packs
 while true; do

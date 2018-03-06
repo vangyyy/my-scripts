@@ -12,6 +12,8 @@ sudo add-apt-repository -y ppa:gerardpuig/ppa #ubuntu-cleaner
 sudo add-apt-repository -y ppa:linrunner/tlp
 sudo add-apt-repository -y ppa:mozillateam/firefox-next
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2C19886
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add
 # sudo add-apt-repository -y ppa:eugenesan/ppa #smartgit
 # sudo add-apt-repository -y ppa:damien-moore/codeblocks-stable
 
@@ -20,7 +22,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # Install applications
-sudo apt-get -y install git chromium-browser firefox gedit gedit-plugins atom vim gksu nautilus-dropbox thunderbird docky gimp calibre vlc deluge deluged rhythmbox-plugin-alternative-toolbar spotify-client gparted exfat-utils exfat-fuse samba virtualbox synaptic ubuntu-cleaner oracle-java8-installer intellij-idea-ultimate android-studio adb pepperflashplugin-nonfree tlp tlp-rdw smartmontools ethtool tp-smapi-dkms acpitool texlive texlive-bibtex-extra biber texlive-latex-extra texlive-lang-czechslovak
+sudo apt-get -y install git chromium-browser firefox gedit gedit-plugins atom vim gksu nautilus-dropbox thunderbird docky gimp calibre vlc deluge deluged rhythmbox-plugin-alternative-toolbar spotify-client gparted exfat-utils exfat-fuse samba virtualbox synaptic ubuntu-cleaner oracle-java8-installer intellij-idea-ultimate android-studio adb pepperflashplugin-nonfree tlp tlp-rdw smartmontools ethtool tp-smapi-dkms acpitool texlive texlive-bibtex-extra biber texlive-latex-extra texlive-lang-czechslovak insomnia
 
 # Clone icon packs
 while true; do
@@ -128,9 +130,9 @@ EOF'
 sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=2/' /etc/default/grub
 sudo update-grub
 
-#run to change style to vanilla gnome session
-sudo apt-get install gnome-session
-sudo update-alternatives --config gdm3.css
+# Run to change style to vanilla gnome session
+#sudo apt-get install gnome-session
+#sudo update-alternatives --config gdm3.css
 
 # Remove bloat
 sudo apt-get -y purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku transmission-common transmission-gtk apport gnome-documents

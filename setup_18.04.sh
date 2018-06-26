@@ -107,6 +107,11 @@ sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 if [[ ($1 == "yoga") ]]; then
 	# Disable input sources
 	echo 'while read id; do xinput disable $id; done <<< $(xinput | grep 'Wacom' | cut -d"=" -f2 | cut -f1)' >> ~/.profile
+
+	# Trackpoint sensitivity
+	sudo bash -c 'cat << EOF > /etc/udev/rules.d/10-trackpoint.rules
+	ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/speed}="255"
+	EOF'
 fi
 
 if [[ ($1 == "desktop") ]]; then

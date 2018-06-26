@@ -25,7 +25,7 @@ sudo snap install --classic intellij-idea-ultimate
 sudo snap install --classic android-studio
 sudo snap install --classic slack
 
-sudo git clone https://github.com/vangyyy/My-Custom-Gnome.git /usr/share/icons/My-Custom-Gnome
+git clone https://github.com/vangyyy/My-Custom-Gnome.git $HOME/.icons/My-Custom-Gnome
 
 # Config system settings
 gsettings set org.gnome.desktop.interface show-battery-percentage  true

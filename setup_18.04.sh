@@ -149,7 +149,7 @@ echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~ Removing packages ~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo snap remove gnome-system-monitor gnome-calculator gnome-characters gnome-logs
-sudo apt purge apport memtest86+
+sudo snap remove -y gnome-system-monitor gnome-calculator gnome-characters gnome-logs
+sudo apt -y purge apport memtest86+
 sudo apt -y autoremove
 sudo apt -y clean

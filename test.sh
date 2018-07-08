@@ -14,20 +14,4 @@
 #gtk-application-prefer-dark-theme=1
 #EOF
 
-
-
-#echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
-#echo -e '/~~~~~~~~~~~~~~~~~~~~~~ Applying glib schemas ~~~~~~~~~~~~~~~~~~~~~/'
-#echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
-
-# Lockscreen and display scaling
-#sudo bash -c 'cat << EOF > /usr/share/glib-2.0/schemas/30_my-text-factor.gschema.override
-#[org.gnome.desktop.interface]
-#scaling-factor=1
-#text-scaling-factor=1.25
-#EOF'
-#sudo glib-compile-schemas /usr/share/glib-2.0/schemas
-
-
-
 #sudo bash -c 'echo -e "ACTION==\"add\", SUBSYSTEM==\"input\", ATTR{name}==\"TPPS/2 IBM TrackPoint\", ATTR{device/speed}=\"255\"" >> /etc/udev/rules.d/10-trackpoint.rules'

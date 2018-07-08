@@ -20,11 +20,17 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing snap packages ~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 sudo snap install communitheme insomnia postman spotify
-sudo snap install --classic atom
 sudo snap install --classic phpstorm
 sudo snap install --classic intellij-idea-ultimate
 sudo snap install --classic android-studio
 sudo snap install --classic slack
+sudo snap install --classic atom
+
+echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing atom packages ~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
+
+apm install atom-beautify file-icons language-latex latex minimap pdf-view platformio-ide-terminal
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~ Cloning Icon pack ~~~~~~~~~~~~~~~~~~~~~~~~/'
@@ -40,8 +46,6 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface clock-format 24h
 gsettings set org.gnome.desktop.interface clock-show-seconds true
-gsettings set org.gnome.desktop.interface scaling-factor 1
-gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 gsettings set org.gnome.desktop.interface icon-theme 'My-Custom-Gnome'
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
@@ -72,6 +76,18 @@ gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 gsettings set org.gnome.gedit.preferences.editor scheme "oblivion"
 gsettings set org.gnome.gedit.plugins active-plugins "['spell', 'quickopen', 'modelines', 'wordcompletion', 'bracketcompletion', 'git', 'codecomment', 'filebrowser', 'snippets', 'docinfo', 'externaltools', 'terminal', 'smartspaces', 'time']"
+
+echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~ Applying glib schemas ~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
+
+# Lockscreen and text scaling
+sudo bash -c 'cat << EOF > /usr/share/glib-2.0/schemas/30_my-text-factor.gschema.override
+[org.gnome.desktop.interface]
+scaling-factor=1
+text-scaling-factor=1.25
+EOF'
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~ Installing Gnome extensions ~~~~~~~~~~~~~~~~~~/'

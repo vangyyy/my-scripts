@@ -47,10 +47,10 @@ else
 		echo 'H97 Gaming 3' >> $log
 	fi
 	if egrep -i "b8:27:eb:7d:dd:4f" <<< "$network" ; then
-		echo 'Raspberry Pi 2 (LAN)' >> $log
+		echo 'Raspberry Pi 2 (Ethernet)' >> $log
 	fi
 	if egrep -i "00:1d:43:30:1e:03" <<< "$network" ; then
-		echo 'Raspberry Pi 2 (Wi-Fi)' >> $log
+		echo 'Raspberry Pi 2 (Wi-Fi Dongle)' >> $log
 	fi
 	if egrep -i "54:27:58:95:6c:6d" <<< "$network" ; then
 		echo 'LenovoPad' >> $log
@@ -67,14 +67,17 @@ else
 	if egrep -i "c0:bd:d1:a9:d4:34" <<< "$network" ; then
 		echo 'Samsung Galaxy Note 4' >> $log
 	fi
-	if egrep -i "c4:85:08:10:fd:d8" <<< "$network" ; then
-		echo 'Asus UX31A' >> $log
+	if egrep -i "a4:34:d9:a9:cf:36" <<< "$network" ; then
+		echo 'Lenovo X1 Yoga (Wi-Fi)' >> $log
+	fi
+	if egrep -i "00:0e:c6:de:2f:fc" <<< "$network" ; then
+		echo 'Lenovo X1 Yoga (Ethernet Dongle)' >> $log
 	fi
 	if egrep -i "60:f8:1d:a8:7e:d6" <<< "$network" ; then
-		echo 'Apple Macbook Pro' >> $log
+		echo 'Apple Macbook Pro (Wi-Fi)' >> $log
 	fi
-	if egrep -i "c8:ff:28:fa:67:cd" <<< "$network" ; then
-		echo 'Acer Aspire F15' >> $log
+	if egrep -i "00:e0:4c:68:5b:4c" <<< "$network" ; then
+		echo 'Apple Macbook Pro (Ethernet Dongle)' >> $log
 	fi
 
 	exec > /dev/tty

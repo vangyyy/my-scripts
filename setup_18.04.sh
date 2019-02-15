@@ -10,16 +10,17 @@ sudo apt -y upgrade
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing apt packages ~~~~~~~~~~~~~~~~~~~~~/'
-echo -e '/~~~~~~~~~~~~~~~~~ TO DO: dropbox, docky, synergy ~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~ TO DO: dropbox, synergy ~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo apt install -y git gnome-session gnome-tweak-tool gnome-system-monitor gedit-plugins baobab rhythmbox thunderbird gimp virtualbox deluge vlc chromium-browser gparted adb oracle-java8-installer texlive-full unrar curl net-tools
+sudo apt install -y git gnome-session gnome-tweak-tool gnome-system-monitor gedit-plugins baobab rhythmbox thunderbird gimp virtualbox deluge deluged vlc chromium-browser gparted adb oracle-java8-installer texlive-full unrar curl net-tools chrome-gnome-shell latexila usb-creator-gtk
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing snap packages ~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo snap install communitheme insomnia postman spotify
+sudo snap install communitheme insomnia postman spotify google-play-music-desktop-player
+sudo snap install --classic webstorm
 sudo snap install --classic phpstorm
 sudo snap install --classic intellij-idea-ultimate
 sudo snap install --classic android-studio
@@ -95,12 +96,17 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 sudo wget -O /usr/local/bin/gnomeshell-extension-manage "https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/ubuntugnome/gnomeshell-extension-manage"
 sudo chmod +x /usr/local/bin/gnomeshell-extension-manage
-gnomeshell-extension-manage --install --extension-id 104 --version 3.28 --user #NetSpeed
+gnomeshell-extension-manage --install --extension-id 800 --version 3.28 --user #Remove Dropdown Arrows
+gnomeshell-extension-manage --install --extension-id 355 --version 3.26 --user #Status Area Horizontal Spacing
+gnomeshell-extension-manage --install --extension-id 1036 --version 3.22 --user #Extensions
+gnomeshell-extension-manage --install --extension-id 1217 --version 3.26 --user #Appfolders Management
+
 gnomeshell-extension-manage --install --extension-id 1128 --version 3.22 --user #Hide Activities Button
 gnomeshell-extension-manage --install --extension-id 112 --version 3.18 --user #Remove Accessibility
 gnomeshell-extension-manage --install --extension-id 1267 --version 3.26 --user #No Title Bar
 gnomeshell-extension-manage --install --extension-id 808 --version 3.22 --user #Hide Workspace Thumbnails
 gnomeshell-extension-manage --install --extension-id 1011 --version 3.22 --user #Dynamic Panel Transparency
+#gnomeshell-extension-manage --install --extension-id 104 --version 3.28 --user #NetSpeed
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~ GRUB settings ~~~~~~~~~~~~~~~~~~~~~~~~~~/'
@@ -121,6 +127,13 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~ Device specific settings ~~~~~~~~~~~~~~~~~~~~/'
 if grep -Fxq 31 '/sys/class/dmi/id/chassis_type'; then
 	echo -e '/~~~~~~~~~~~~~~~~~~~~~~~ Thinkpad X1 Yoga ~~~~~~~~~~~~~~~~~~~~~~~~~/'
 	echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
+
+	# Installing apt packages
+	sudo apt install xournal
+
+	# Installing Gnome extensions
+	gnomeshell-extension-manage --install --extension-id 945 --version 3.26 --user # CPU Power Manager
+	gnomeshell-extension-manage --install --extension-id 1319 --user # GSConnect
 
 	# Disable input sources
 	line='while read id; do xinput disable $id; done <<< $(xinput | grep 'Wacom' | cut -d"=" -f2 | cut -f1)'

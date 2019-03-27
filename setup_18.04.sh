@@ -80,7 +80,7 @@ gsettings set org.gnome.gedit.preferences.editor scheme "oblivion"
 gsettings set org.gnome.gedit.plugins active-plugins "['spell', 'quickopen', 'modelines', 'wordcompletion', 'bracketcompletion', 'git', 'codecomment', 'filebrowser', 'snippets', 'docinfo', 'externaltools', 'terminal', 'smartspaces', 'time']"
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
-echo -e '/~~~~~~~~~~~~~~~~~~~~~~ Applying glib schemas ~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~ Setting up scaling ~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 # Lockscreen and text scaling
@@ -90,6 +90,9 @@ scaling-factor=1
 text-scaling-factor=1.25
 EOF'
 sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+# Chromium scaling
+sudo sed -i 's/CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--force-device-scale-factor=1"/' /etc/chromium-browser/default
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~ Installing Gnome extensions ~~~~~~~~~~~~~~~~~~/'

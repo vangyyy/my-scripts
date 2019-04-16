@@ -27,6 +27,7 @@ sudo snap install --classic intellij-idea-ultimate
 sudo snap install --classic android-studio
 sudo snap install --classic slack
 sudo snap install --classic atom
+sudo snap install --classic code
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing atom packages ~~~~~~~~~~~~~~~~~~~~/'

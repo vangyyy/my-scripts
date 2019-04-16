@@ -145,7 +145,7 @@ if grep -Fxq 31 '/sys/class/dmi/id/chassis_type'; then
 	gnomeshell-extension-manage --install --extension-id 1319 --user # GSConnect
 
 	# Disable input sources
-	line='while read id; do xinput disable $id; done <<< $(xinput | grep 'Wacom' | cut -d"=" -f2 | cut -f1)'
+	line='while read id; do xinput disable $id; done <<< $(xinput | grep 'Finger' | cut -d"=" -f2 | cut -f1)' # Use 'Wacom' for all touch input
 	file=$HOME/.profile
 	grep -qF "$line" "$file" || echo -e "\n# Disable input sources\n$line" >> "$file"
 

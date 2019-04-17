@@ -14,19 +14,19 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing apt packages ~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ TO DO: dropbox, synergy ~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo apt install -y git gnome-session gnome-tweak-tool gnome-system-monitor gedit-plugins baobab rhythmbox thunderbird gimp virtualbox deluge deluged vlc chromium-browser gparted adb oracle-java8-installer oracle-java11-installer texlive-full unrar curl net-tools chrome-gnome-shell latexila usb-creator-gtk
+sudo apt install -y git gnome-session gnome-tweak-tool gnome-system-monitor gedit-plugins baobab rhythmbox gimp virtualbox deluge deluged vlc chromium-browser gparted adb oracle-java8-installer oracle-java11-installer texlive-full unrar curl net-tools chrome-gnome-shell latexila usb-creator-gtk vim
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing snap packages ~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo snap install communitheme insomnia postman spotify google-play-music-desktop-player
+sudo snap install communitheme postman spotify google-play-music-desktop-player
 sudo snap install --classic webstorm
 sudo snap install --classic phpstorm
 sudo snap install --classic intellij-idea-ultimate
 sudo snap install --classic android-studio
 sudo snap install --classic slack
-sudo snap install --classic atom
+sudo snap install --classic skype
 sudo snap install --classic code
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'

@@ -6,6 +6,7 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:linuxuprising/java
+sudo add-apt-repository -y ppa:alexlarsson/flatpak
 sudo apt -y update
 sudo apt -y upgrade
 
@@ -14,7 +15,7 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing apt packages ~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ TO DO: dropbox, synergy ~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo apt install -y git gnome-session gnome-tweak-tool gnome-system-monitor gedit-plugins baobab rhythmbox gimp virtualbox deluge deluged vlc chromium-browser gparted adb oracle-java8-installer oracle-java11-installer texlive-full unrar curl net-tools chrome-gnome-shell latexila usb-creator-gtk vim
+sudo apt install -y git gnome-session gnome-tweak-tool gnome-system-monitor gedit-plugins baobab rhythmbox gimp virtualbox deluge deluged vlc chromium-browser gparted adb oracle-java8-installer oracle-java11-installer texlive-full unrar curl net-tools chrome-gnome-shell latexila usb-creator-gtk vim flatpak gnome-software-plugin-flatpak
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing snap packages ~~~~~~~~~~~~~~~~~~~~/'

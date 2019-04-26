@@ -31,12 +31,6 @@ sudo snap install --classic skype
 sudo snap install --classic code
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
-echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing atom packages ~~~~~~~~~~~~~~~~~~~~/'
-echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
-
-apm install atom-beautify file-icons language-latex latex minimap pdf-view platformio-ide-terminal
-
-echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~ Cloning Icon pack ~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
@@ -130,6 +124,21 @@ fi
 EOF'
 sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=2/' /etc/default/grub
 sudo update-grub
+
+echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~ Autostart Synergy ~~~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
+
+# Start Synergy 5 seconds upon startup
+cat > ~/.config/autostart/synergy.desktop << EOF
+[Desktop Entry]
+Type=Application
+Name=Synergy
+Comment=Keyboard and mouse sharing solution
+Exec=/usr/bin/synergy
+Icon=synergy
+X-GNOME-Autostart-Delay=5
+EOF
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Device specific settings ~~~~~~~~~~~~~~~~~~~~/'

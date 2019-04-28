@@ -4,7 +4,6 @@ echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~ Adding repositories, update, upgrade ~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:linuxuprising/java
 sudo add-apt-repository -y ppa:alexlarsson/flatpak
 sudo apt -y update
@@ -20,7 +19,7 @@ sudo apt -y install gnome-tweaks gnome-system-monitor chrome-gnome-shell
 # Core packages
 sudo apt -y install git adb vim unrar curl net-tools gedit-plugins
 # Java
-sudo apt -y install oracle-java8-installer oracle-java11-installer
+sudo apt -y install oracle-java11-installer oracle-java12-installer
 # Flatpak
 sudo apt -y install flatpak gnome-software-plugin-flatpak
 # LaTeX

@@ -15,20 +15,36 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing apt packages ~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ TO DO: dropbox, synergy ~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo apt install -y git gnome-session gnome-tweak-tool gnome-system-monitor gedit-plugins baobab rhythmbox gimp virtualbox deluge deluged vlc chromium-browser gparted adb oracle-java8-installer oracle-java11-installer texlive-full unrar curl net-tools chrome-gnome-shell latexila usb-creator-gtk vim flatpak gnome-software-plugin-flatpak
+# Gnome related
+sudo apt -y install gnome-tweaks gnome-system-monitor chrome-gnome-shell
+# Core packages
+sudo apt -y install git adb vim unrar curl net-tools gedit-plugins
+# Java
+sudo apt -y install oracle-java8-installer oracle-java11-installer
+# Flatpak
+sudo apt -y install flatpak gnome-software-plugin-flatpak
+# LaTeX
+sudo apt -y install texlive-full latexila
+# Necessities
+sudo apt -y install baobab rhythmbox gparted usb-creator-gtk gimp inkscape virtualbox deluge deluged vlc chromium-browser
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing snap packages ~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo snap install communitheme postman spotify google-play-music-desktop-player
+sudo snap install communitheme
 sudo snap install --classic webstorm
 sudo snap install --classic phpstorm
 sudo snap install --classic intellij-idea-ultimate
 sudo snap install --classic android-studio
-sudo snap install --classic slack
-sudo snap install --classic skype
 sudo snap install --classic code
+sudo snap install --classic slack
+
+echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~ Installing flatpak packages ~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
+
+sudo flatpak -y install postman spotify skype googleplaymusicdesktopplayer
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~ Cloning Icon pack ~~~~~~~~~~~~~~~~~~~~~~~~/'
@@ -100,17 +116,15 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 sudo wget -O /usr/local/bin/gnomeshell-extension-manage "https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/ubuntugnome/gnomeshell-extension-manage"
 sudo chmod +x /usr/local/bin/gnomeshell-extension-manage
-gnomeshell-extension-manage --install --extension-id 800 --version 3.28 --user #Remove Dropdown Arrows
-gnomeshell-extension-manage --install --extension-id 355 --version 3.26 --user #Status Area Horizontal Spacing
-gnomeshell-extension-manage --install --extension-id 1036 --version 3.22 --user #Extensions
-gnomeshell-extension-manage --install --extension-id 1217 --version 3.26 --user #Appfolders Management
+gnomeshell-extension-manage --install --extension-id 800 --user #Remove Dropdown Arrows
+gnomeshell-extension-manage --install --extension-id 1217 --user #Appfolders Management
+gnomeshell-extension-manage --install --extension-id 1267 --user #No Title Bar
+gnomeshell-extension-manage --install --extension-id 1011 --user #Dynamic Panel Transparency
 
+gnomeshell-extension-manage --install --extension-id 355 --version 3.26 --user #Status Area Horizontal Spacing
+#gnomeshell-extension-manage --install --extension-id 1036 --version 3.22 --user #Extensions
 gnomeshell-extension-manage --install --extension-id 1128 --version 3.22 --user #Hide Activities Button
 gnomeshell-extension-manage --install --extension-id 112 --version 3.18 --user #Remove Accessibility
-gnomeshell-extension-manage --install --extension-id 1267 --version 3.26 --user #No Title Bar
-gnomeshell-extension-manage --install --extension-id 808 --version 3.22 --user #Hide Workspace Thumbnails
-gnomeshell-extension-manage --install --extension-id 1011 --version 3.22 --user #Dynamic Panel Transparency
-#gnomeshell-extension-manage --install --extension-id 104 --version 3.28 --user #NetSpeed
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~ GRUB settings ~~~~~~~~~~~~~~~~~~~~~~~~~~/'
@@ -130,7 +144,7 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~ Autostart Synergy ~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 # Start Synergy 5 seconds upon startup
-cat > ~/.config/autostart/synergy.desktop << EOF
+cat > $HOME/.config/autostart/synergy.desktop << EOF
 [Desktop Entry]
 Type=Application
 Name=Synergy
@@ -151,8 +165,8 @@ if grep -Fxq 31 '/sys/class/dmi/id/chassis_type'; then
 	sudo apt install xournal
 
 	# Installing Gnome extensions
-	gnomeshell-extension-manage --install --extension-id 945 --version 3.26 --user # CPU Power Manager
 	gnomeshell-extension-manage --install --extension-id 1319 --user # GSConnect
+	gnomeshell-extension-manage --install --extension-id 945 --user # CPU Power Manager
 
 	# Disable input sources
 	line='while read id; do xinput disable $id; done <<< $(xinput | grep 'Finger' | cut -d"=" -f2 | cut -f1)' # Use 'Wacom' for all touch input

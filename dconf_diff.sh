@@ -3,7 +3,7 @@
 dconf dump / > /tmp/old
 
 while true; do
-	read -p "Make dconf changes. Done ? [Y] " answer
+	read -p "Make dconf changes. Done? [Y]: " answer
 	if [[ ($answer = "y") || ($answer = "Y") ]]; then
 		break
 	fi

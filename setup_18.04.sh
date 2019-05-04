@@ -6,26 +6,29 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 sudo add-apt-repository -y ppa:linuxuprising/java
 sudo add-apt-repository -y ppa:alexlarsson/flatpak
+sudo add-apt-repository -y ppa:gerardpuig/ppa #ubuntu-cleaner
 sudo apt -y update
 sudo apt -y upgrade
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing apt packages ~~~~~~~~~~~~~~~~~~~~~/'
-echo -e '/~~~~~~~~~~~~~~~~~~~~ TO DO: dropbox, synergy ~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~ TO DO: dropbox, synergy, teamviewer ~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 # Gnome related
-sudo apt -y install gnome-tweaks gnome-system-monitor chrome-gnome-shell
+sudo apt -y install gnome-tweaks gnome-system-monitor gnome-calculator chrome-gnome-shell
 # Core packages
 sudo apt -y install git adb vim unrar curl net-tools gedit-plugins
-# Java
-sudo apt -y install oracle-java11-installer oracle-java12-installer
+# Java (interactive)
+sudo apt -y install oracle-java12-installer oracle-java11-installer
 # Flatpak
 sudo apt -y install flatpak gnome-software-plugin-flatpak
 # LaTeX
 sudo apt -y install texlive-full latexila
 # Necessities
-sudo apt -y install baobab rhythmbox gparted usb-creator-gtk gimp inkscape virtualbox deluge deluged vlc chromium-browser
+sudo apt -y install baobab rhythmbox gparted dconf-editor usb-creator-gtk gimp inkscape ubuntu-cleaner virtualbox deluge deluged vlc chromium-browser
+# Ssh
+sudo apt -y install openssh-client openssh-server
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing snap packages ~~~~~~~~~~~~~~~~~~~~/'
@@ -40,25 +43,38 @@ sudo snap install --classic code
 sudo snap install --classic slack
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~ Installing pip packages ~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
+
+sudo pip install --upgrade scour #for Papirus
+
+echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~ Installing flatpak packages ~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak -y install postman spotify skype googleplaymusicdesktopplayer
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
-echo -e '/~~~~~~~~~~~~~~~~~~~~~~~ Cloning Icon pack ~~~~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~~~~~~~~~~~~~~~ Cloning repositories ~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
+rm -rf $HOME/Templates/ $HOME/Public/
+mkdir $HOME/.icons $HOME/.themes $HOME/bin
+git clone https://github.com/vangyyy/my-scripts.git $HOME/bin/my-scripts
+#TODO: Replace with Papirus
 git clone https://github.com/vangyyy/My-Custom-Gnome.git $HOME/.icons/My-Custom-Gnome
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~ Configuring gsettings ~~~~~~~~~~~~~~~~~~~~~~/'
+echo -e '/~~~~~~~~ TO DO: switch to Communitheme from login screen ~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface clock-format 24h
 gsettings set org.gnome.desktop.interface clock-show-seconds true
+#TODO: Replace with Papirus
 gsettings set org.gnome.desktop.interface icon-theme 'My-Custom-Gnome'
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
@@ -82,11 +98,17 @@ gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
 gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gsettings set org.gnome.shell.extensions.dash-to-dock customize-alphas true
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 40
 gsettings set org.gnome.shell.extensions.dash-to-dock max-alpha 0
 gsettings set org.gnome.shell.extensions.dash-to-dock min-alpha 0
 gsettings set org.gnome.nautilus.preferences executable-text-activation 'ask'
 gsettings set org.gnome.nautilus.desktop volumes-visible true
+gsettings set org.gnome.nautilus.desktop trash-icon-visible false
 gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ audible-bell false
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ use-theme-colors false
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ foreground-color 'rgb(255,255,255)'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ foreground-color 'rgb(255,255,255)'
 gsettings set org.gnome.gedit.preferences.editor bracket-matching true
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
@@ -194,7 +216,7 @@ echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~ Removing packages ~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 
-sudo snap remove -y gnome-system-monitor gnome-calculator gnome-characters gnome-logs
+sudo snap remove gnome-system-monitor gnome-calculator gnome-characters gnome-logs
 sudo apt -y purge apport memtest86+
 sudo apt -y autoremove
 sudo apt -y clean

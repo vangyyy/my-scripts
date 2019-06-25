@@ -18,7 +18,7 @@ echo -e '/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/\n'
 # Gnome related
 sudo apt -y install gnome-tweaks gnome-system-monitor gnome-calculator chrome-gnome-shell
 # Core packages
-sudo apt -y install git adb vim unrar curl net-tools gedit-plugins
+sudo apt -y install git adb vim unrar curl net-tools gedit-plugins exfat-fuse exfat-utils
 # Java (interactive)
 sudo apt -y install oracle-java12-installer oracle-java11-installer
 # Flatpak

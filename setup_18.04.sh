@@ -115,6 +115,7 @@ gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 gsettings set org.gnome.gedit.preferences.editor scheme "oblivion"
 gsettings set org.gnome.gedit.plugins active-plugins "['spell', 'quickopen', 'modelines', 'wordcompletion', 'bracketcompletion', 'git', 'codecomment', 'filebrowser', 'snippets', 'docinfo', 'externaltools', 'terminal', 'smartspaces', 'time']"
+gsettings set org.gnome.shell favorite-apps "['chromium-browser.desktop', 'firefox.desktop', 'chrome-bgjohebimpjdhhocbknplfelpmdhifhd-Default.desktop', 'chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop', 'com.googleplaymusicdesktopplayer.GPMDP.desktop', 'com.spotify.Client.desktop', 'synergy.desktop', 'deluge.desktop', 'com.getpostman.Postman.desktop', 'code_code.desktop', 'intellij-idea-ultimate_intellij-idea-ultimate.desktop', 'gnome-system-monitor.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
 
 echo -e '\n/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/'
 echo -e '/~~~~~~~~~~~~~~~~~~~~~~ Setting up scaling ~~~~~~~~~~~~~~~~~~~~~~~~/'
